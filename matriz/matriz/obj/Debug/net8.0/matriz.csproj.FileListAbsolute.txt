@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\matriz\matriz\bin\Debug\net8.0\matriz.exe
+C:\Users\user\source\repos\matriz\matriz\bin\Debug\net8.0\matriz.deps.json
+C:\Users\user\source\repos\matriz\matriz\bin\Debug\net8.0\matriz.runtimeconfig.json
+C:\Users\user\source\repos\matriz\matriz\bin\Debug\net8.0\matriz.dll
+C:\Users\user\source\repos\matriz\matriz\bin\Debug\net8.0\matriz.pdb
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.AssemblyInfo.cs
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.dll
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\refint\matriz.dll
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.pdb
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\matriz.genruntimeconfig.cache
+C:\Users\user\source\repos\matriz\matriz\obj\Debug\net8.0\ref\matriz.dll

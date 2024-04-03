@@ -1,0 +1,187 @@
+1-using System;
+
+class Program
+{
+    static void Main()
+    {
+        
+        int[,] matriz = new int[5, 5];
+
+        
+        PreencherMatriz(matriz);
+
+        
+        int negativos = 0;
+        int somaPositivos = 0;
+        int somaPrimos = 0;
+
+        foreach (int numero in matriz)
+        {
+            if (numero < 0)
+            {
+                negativos++;
+            }
+            else if (numero > 0)
+            {
+                somaPositivos += numero;
+
+                if (EhPrimo(numero))
+                {
+                    somaPrimos += numero;
+                }
+            }
+        }
+
+        
+        Console.WriteLine($"Quantidade de números negativos: {negativos}");
+        Console.WriteLine($"Soma dos números positivos: {somaPositivos}");
+        Console.WriteLine($"Soma dos números primos: {somaPrimos}");
+    }
+
+    static void PreencherMatriz(int[,] matriz)
+    {
+        Random random = new Random();
+
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                matriz[i, j] = random.Next(-10, 11); 
+            }
+        }
+    }
+
+    static bool EhPrimo(int numero)
+    {
+        if (numero <= 1)
+        {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.Sqrt(numero); i++)
+        {
+            if (numero % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+2-using System;
+
+class Program
+{
+    static void Main()
+    {
+        
+        int[,] matriz = new int[2, 4];
+
+        
+        PreencherMatriz(matriz);
+
+        
+        int[] quantidades = new int[2];
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                if (matriz[i, j] >= 12 && matriz[i, j] <= 20)
+                {
+                    quantidades[i]++;
+                }
+            }
+        }
+
+        
+        for (int i = 0; i < quantidades.Length; i++)
+        {
+            Console.WriteLine($"Quantidade de elementos entre 12 e 20 na linha {i + 1}: {quantidades[i]}");
+        }
+
+        
+        double somaPares = 0;
+        int contadorPares = 0;
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                if (matriz[i, j] % 2 == 0)
+                {
+                    somaPares += matriz[i, j];
+                    contadorPares++;
+                }
+            }
+        }
+
+        double mediaPares = contadorPares > 0 ? somaPares / contadorPares : 0;
+
+        
+        Console.WriteLine($"Média dos elementos pares da matriz: {mediaPares}");
+    }
+
+    static void PreencherMatriz(int[,] matriz)
+    {
+        Random random = new Random();
+
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                matriz[i, j] = random.Next(1, 31); 
+            }
+        }
+    }
+}
+
+3-using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] matriz = new int[10, 10];
+        PreencherMatriz(matriz);
+
+        double mediaDiagonalPrincipal = CalcularMediaDiagonalPrincipal(matriz);
+        double mediaDiagonalSecundaria = CalcularMediaDiagonalSecundaria(matriz);
+
+        Console.WriteLine($"Média da diagonal principal: {mediaDiagonalPrincipal}");
+        Console.WriteLine($"Média da diagonal secundária: {mediaDiagonalSecundaria}");
+    }
+
+    static void PreencherMatriz(int[,] matriz)
+    {
+        Random random = new Random();
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                matriz[i, j] = random.Next(1, 101); 
+            }
+        }
+    }
+
+    static double CalcularMediaDiagonalPrincipal(int[,] matriz)
+    {
+        double somaDiagonalPrincipal = 0;
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            somaDiagonalPrincipal += matriz[i, i];
+        }
+        return somaDiagonalPrincipal / matriz.GetLength(0);
+    }
+
+    static double CalcularMediaDiagonalSecundaria(int[,] matriz)
+    {
+        double somaDiagonalSecundaria = 0;
+        int tamanho = matriz.GetLength(0);
+        for (int i = 0; i < tamanho; i++)
+        {
+            somaDiagonalSecundaria += matriz[i, tamanho - 1 - i];
+        }
+        return somaDiagonalSecundaria / tamanho;
+    }
+}
